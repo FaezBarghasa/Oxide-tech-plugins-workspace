@@ -1,0 +1,6 @@
+{
+  "name": "Blender CAD Control Plane",
+  "description": "Parametric 3D mechanical CAD control plane with real-time viewport, bento-grid theme, and AI assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

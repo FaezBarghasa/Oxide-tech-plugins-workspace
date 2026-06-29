@@ -1,0 +1,23 @@
+[package]
+name = "api"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+actix-web = "4.8"
+actix-rt = "2.10"
+tokio.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tracing.workspace = true
+tracing-subscriber = { workspace = true, features = ["json"] }
+uuid.workspace = true
+chrono.workspace = true
+thiserror = "1.0"
+anyhow = "1.0"
+shared = { path = "../shared" }
+surrealdb = { version = "1.4" }
+reqwest = { version = "0.11", features = ["json", "stream", "rustls-tls"] }
+futures = "0.3"
+prometheus = "0.13"

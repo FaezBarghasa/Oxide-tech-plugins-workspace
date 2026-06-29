@@ -1,0 +1,112 @@
+<!-- META-INF/plugin.xml -->
+<idea-plugin>
+    <id>com.oxidetech.embedded</id>
+    <name>Oxide-Tech Embedded Rust Development</name>
+    <vendor email="dev@oxidetech.com" url="https://oxidetech.io">Oxide-Tech</vendor>
+    
+    <description>
+        Unified IDE plugin for embedded Rust firmware engineering with real-time hardware constraint validation, integrated compilation, and AI-assisted code generation.
+    </description>
+    
+    <depends>org.rust.lang</depends>
+    <depends>com.intellij.modules.platform</depends>
+    
+    <!-- Tool windows -->
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow
+            id="EmbeddedRust"
+            anchor="right"
+            class="com.oxidetech.embedded.ui.toolwindows.EmbeddedRustToolWindow"
+            icon="/icons/embedded.svg" />
+        
+        <toolWindow
+            id="CompilationOutput"
+            anchor="bottom"
+            class="com.oxidetech.embedded.ui.toolwindows.CompilationToolWindow"
+            icon="/icons/compiler.svg" />
+        
+        <!-- Inspections -->
+        <localInspection
+            language="RUST"
+            shortName="RustEmbeddedAsyncPattern"
+            displayName="Embedded Async Pattern Inspection"
+            groupPath="Rust"
+            groupName="Embedded Systems"
+            enabledByDefault="true"
+            level="WARNING"
+            implementationClass="com.oxidetech.embedded.analysis.AsyncPatternInspection" />
+        
+        <localInspection
+            language="RUST"
+            shortName="HardwareConstraintViolation"
+            displayName="Hardware Constraint Validation"
+            groupName="Embedded Systems"
+            enabledByDefault="true"
+            level="ERROR"
+            implementationClass="com.oxidetech.embedded.analysis.HardwareConstraintInspection" />
+        
+        <localInspection
+            language="RUST"
+            shortName="NoStdCompliance"
+            displayName="no_std Compliance Checker"
+            groupName="Embedded Systems"
+            enabledByDefault="true"
+            level="ERROR"
+            implementationClass="com.oxidetech.embedded.analysis.NoStdComplianceInspection" />
+        
+        <!-- Completion providers -->
+        <completion.contributor
+            language="RUST"
+            implementationClass="com.oxidetech.embedded.codeCompletion.EmbeddedCompletionProvider" />
+        
+        <completion.contributor
+            language="RUST"
+            implementationClass="com.oxidetech.embedded.codeCompletion.RegisterMnemonicCompletion" />
+        
+        <!-- Documentation provider -->
+        <lang.documentationProvider
+            language="RUST"
+            implementationClass="com.oxidetech.embedded.documentation.RegisterDocumentationProvider" />
+        
+        <!-- Actions -->
+        <action
+            id="Embedded.BuildAndFlash"
+            class="com.oxidetech.embedded.actions.BuildAndFlashAction"
+            text="Build and Flash to Device"
+            icon="/icons/flash.svg"
+            description="Compile and flash firmware to connected device">
+            <keyboard-shortcut keymap="${'$'}default" first-keystroke="shift alt F12" />
+        </action>
+        
+        <!-- Project templates -->
+        <projectTemplatesFactory
+            implementation="com.oxidetech.embedded.templates.EmbeddedProjectTemplate" />
+        
+        <!-- Settings configurable -->
+        <projectConfigurable
+            parentId="tools"
+            displayName="Embedded Rust"
+            id="embeddedRust"
+            implementation="com.oxidetech.embedded.plugin.SettingsConfigurable" />
+    </extensions>
+    
+    <!-- Startup activity -->
+    <applicationInitializedListener
+        implementation="com.oxidetech.embedded.plugin.OxideTechPluginStartupActivity" />
+    
+    <!-- Services -->
+    <extensions defaultExtensionNs="com.intellij">
+        <projectService
+            serviceImplementation="com.oxidetech.embedded.services.BackendAPIService" />
+        <projectService
+            serviceImplementation="com.oxidetech.embedded.services.CompilationService" />
+        <projectService
+            serviceImplementation="com.oxidetech.embedded.services.ASTService" />
+        <projectService
+            serviceImplementation="com.oxidetech.embedded.services.DatasheetService" />
+        <projectService
+            serviceImplementation="com.oxidetech.embedded.services.HardwareConstraintService" />
+        <projectService
+            serviceImplementation="com.oxidetech.embedded.services.ProjectConfigService" />
+    </extensions>
+</idea-plugin>

@@ -1,0 +1,10 @@
+[application]
+name = "frontend"
+default_platform = "web"
+
+[web]
+app = "frontend"
+dx_port = 8080
+
+[desktop]
+app = "frontend"

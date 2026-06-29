@@ -1,0 +1,9 @@
+[workspace]
+resolver = "2"
+members = [
+    "shared",
+    "oxide-piugin-kicad",
+    "oxide-plugin-blender",
+    "oxide-plugin-intellij",
+    "oxide-frontend", "oxide-tech",
+]

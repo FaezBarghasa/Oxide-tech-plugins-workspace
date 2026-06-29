@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+body {
+  @apply bg-[#0A0A0B] text-slate-300 font-sans overflow-hidden antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+/* ReactFlow dark mode overrides */
+.react-flow__controls-button {
+  @apply bg-[#141417] border-white/5 text-slate-300;
+  fill: #cbd5e1;
+}
+.react-flow__controls-button:hover {
+  @apply bg-white/5;
+}

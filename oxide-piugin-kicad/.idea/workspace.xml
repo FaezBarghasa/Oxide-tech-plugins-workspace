@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="CargoProjects">
+    <cargoProject FILE="$PROJECT_DIR$/../Cargo.toml">
+      <package file="$PROJECT_DIR$/../oxide-plugin-blender">
+        <feature name="default" enabled="true" />
+      </package>
+      <package file="$PROJECT_DIR$/../oxide-plugin-intellij">
+        <feature name="default" enabled="true" />
+      </package>
+      <package file="$PROJECT_DIR$">
+        <feature name="default" enabled="true" />
+      </package>
+      <package file="$PROJECT_DIR$/../shared">
+        <feature name="default" enabled="true" />
+      </package>
+    </cargoProject>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5468e48c-7c4e-47f7-bd9b-1fe3ffec263a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/reference/Cargo.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reference/src/components/layout/main_layout.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reference/src/components/layout/mod.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reference/src/components/mod.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reference/src/components/panels/chat_assistant.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reference/src/components/panels/component_designer.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reference/src/components/panels/component_library_panel.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reference/src/components/panels/extension_control_center.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reference/src/components/panels/mod.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reference/src/components/pcb/mod.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reference/src/components/pcb/pcb_viewer.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reference/src/components/schematic/mod.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reference/src/components/schematic/schematic_viewer.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reference/src/main.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reference/src/state/mod.rs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="70" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="RsBuildProfile:dev" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="W89yUKAU" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3FSfkqpiDax5TirHNeBBmJIpPvQ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.rust.reset.selective.auto.import": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "master",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/home/jrad/RustroverProjects/Oxide-Tech-IDE",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
+    "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "stardust.markdown.MarkdownSplitEditorSuppressor:keyList": []
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+      <option name="command" value="run --package oxide-pugin-kicad --bin oxide-pugin-kicad" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="RustProjectSettings">
+    <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5468e48c-7c4e-47f7-bd9b-1fe3ffec263a" name="Changes" comment="" />
+      <created>1782073538531</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1782073538531</updated>
+      <workItem from="1782073539578" duration="5000" />
+      <workItem from="1782073555092" duration="245000" />
+      <workItem from="1782133343983" duration="927000" />
+      <workItem from="1782144308084" duration="918000" />
+      <workItem from="1782195812803" duration="81000" />
+      <workItem from="1782716613888" duration="114000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

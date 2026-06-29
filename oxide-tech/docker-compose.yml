@@ -1,0 +1,75 @@
+version: "3.9"
+
+services:
+  surrealdb:
+    image: surrealdb/surrealdb:latest
+    container_name: oxide-surrealdb
+    command: start --bind 0.0.0.0:8000 file://data
+    environment:
+      SURREAL_USER: root
+      SURREAL_PASS: root
+    volumes:
+      - ./data/surrealdb:/data
+    ports:
+      - "127.0.0.1:8000:8000"
+    cpus: "4"
+    mem_limit: "16g"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: oxide-qdrant
+    volumes:
+      - ./data/qdrant:/qdrant/storage
+    ports:
+      - "127.0.0.1:6333:6333"
+    cpus: "4"
+    mem_limit: "8g"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6333/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  vllm:
+    image: vllm/vllm-openai:latest
+    container_name: oxide-vllm
+    environment:
+      CUDA_VISIBLE_DEVICES: "0"
+      VLLM_TENSOR_PARALLEL_SIZE: "1"
+    volumes:
+      - ~/.cache/huggingface:/root/.cache/huggingface
+    ports:
+      - "127.0.0.1:8000:8000"
+    cpus: "8"
+    mem_limit: "32g"
+    gpus:
+      - device_ids: ["0"]
+        capabilities: [compute, utility]
+    command: >
+      python -m vllm.entrypoints.openai.api_server
+      --model Qwen/Qwen2.5-Coder-14B-Instruct
+      --tensor-parallel-size 1
+      --dtype float16
+      --max-model-len 4096
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  redis:
+    image: redis:7-alpine
+    container_name: oxide-redis
+    ports:
+      - "127.0.0.1:6379:6379"
+    cpus: "2"
+    mem_limit: "4g"
+
+networks:
+  default:
+    name: oxide-net

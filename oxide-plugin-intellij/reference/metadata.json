@@ -1,0 +1,6 @@
+{
+  "name": "Oxide-Tech IntelliJ Plugin Generator",
+  "description": "JetBrains IDE plugin project generator for embedded Rust development",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

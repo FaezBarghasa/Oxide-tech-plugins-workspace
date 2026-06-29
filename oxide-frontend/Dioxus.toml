@@ -1,0 +1,9 @@
+[package]
+name = "oxide-frontend"
+version = "0.1.0"
+
+[web.wasm]
+app = { name = "oxide-frontend", path = "src/main.rs" }
+
+[web.app]
+title = "Oxide-Tech Embedded Rust IDE"

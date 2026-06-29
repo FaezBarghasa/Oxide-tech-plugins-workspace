@@ -1,0 +1,6 @@
+{
+  "name": "Silicon Component Designer & EDA Suite",
+  "description": "A high-performance EDA editor equipped with an AI Component Designer that parses silicon datasheets to synthesize schematic symbols, PCB footprints, and rotatable interactive 3D packages.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
