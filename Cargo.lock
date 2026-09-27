@@ -5383,6 +5383,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "oxide-plugin-altium"
+version = "0.1.0"
+dependencies = [
+ "serde",
+ "thiserror 1.0.69",
+ "tokio",
+ "tracing",
+]
+
+[[package]]
 name = "oxide-plugin-blender"
 version = "0.1.0"
 dependencies = [
@@ -5397,29 +5407,6 @@ dependencies = [
  "server_fn",
  "server_fn_macro_default",
  "surrealdb",
- "urlencoding",
- "wasm-bindgen",
- "wasm-bindgen-futures",
- "web-sys",
-]
-
-[[package]]
-name = "oxide-plugin-intellij"
-version = "0.1.0"
-dependencies = [
- "actix-web",
- "anyhow",
- "chrono",
- "dioxus",
- "gloo-timers",
- "reqwest 0.12.28",
- "rust-embed",
- "serde",
- "serde_json",
- "server_fn",
- "server_fn_macro_default",
- "surrealdb",
- "tokio",
  "urlencoding",
  "wasm-bindgen",
  "wasm-bindgen-futures",
@@ -5448,8 +5435,27 @@ dependencies = [
 ]
 
 [[package]]
-name = "oxide-tech"
+name = "oxide-plugin-rustrover"
 version = "0.1.0"
+dependencies = [
+ "actix-web",
+ "anyhow",
+ "chrono",
+ "dioxus",
+ "gloo-timers",
+ "reqwest 0.12.28",
+ "rust-embed",
+ "serde",
+ "serde_json",
+ "server_fn",
+ "server_fn_macro_default",
+ "surrealdb",
+ "tokio",
+ "urlencoding",
+ "wasm-bindgen",
+ "wasm-bindgen-futures",
+ "web-sys",
+]
 
 [[package]]
 name = "p256"
@@ -7407,6 +7413,7 @@ dependencies = [
  "chrono",
  "serde",
  "serde_json",
+ "uuid",
 ]
 
 [[package]]

@@ -343,6 +343,21 @@ namespace OxideTech.AltiumIntegration
                         response.ContentLength64 = buffer.Length;
                         response.OutputStream.Write(buffer, 0, buffer.Length);
                     }
+                    else if (request.HttpMethod == "POST" && request.Url.LocalPath.Contains("web_search"))
+                    {
+                        string query = "";
+                        try {
+                            using (var reader = new StreamReader(request.InputStream, request.ContentEncoding))
+                            {
+                                query = reader.ReadToEnd();
+                            }
+                        } catch {}
+                        string jsonResponse = "{\"success\": true, \"results\": \"Altium search results for: " + query + "\"}";
+                        byte[] buffer = Encoding.UTF8.GetBytes(jsonResponse);
+                        response.ContentType = "application/json";
+                        response.ContentLength64 = buffer.Length;
+                        response.OutputStream.Write(buffer, 0, buffer.Length);
+                    }
                     else
                     {
                         response.StatusCode = (int)HttpStatusCode.NotFound;

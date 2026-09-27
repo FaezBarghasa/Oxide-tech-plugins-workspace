@@ -1,0 +1,7 @@
+[application]
+name = "oxide-plugin-rustrover"
+default_platform = "web"
+
+[web.watcher]
+reload_html = true
+watch_path = ["src"]

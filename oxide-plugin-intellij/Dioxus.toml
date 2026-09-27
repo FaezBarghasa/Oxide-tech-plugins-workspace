@@ -1,7 +1,0 @@
-[application]
-name = "oxide-plugin-intellij"
-default_platform = "web"
-
-[web.watcher]
-reload_html = true
-watch_path = ["src"]

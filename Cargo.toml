@@ -4,6 +4,7 @@ members = [
     "shared",
     "oxide-piugin-kicad",
     "oxide-plugin-blender",
-    "oxide-plugin-intellij",
-    "oxide-frontend", "oxide-tech",
+    "oxide-plugin-rustrover",
+    "oxide-plugin-altium",
+    "oxide-frontend",
 ]

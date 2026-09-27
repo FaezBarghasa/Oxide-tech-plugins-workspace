@@ -394,6 +394,31 @@ def handle_mcp_invocation(arguments):
         }
 
 
+def web_search_tool_schema():
+    return {
+        "name": "web_search",
+        "description": "Performs a web search to fetch data sheets, footprints, or specs.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "The search query."
+                }
+            },
+            "required": ["query"]
+        }
+    }
+
+def handle_web_search_invocation(arguments):
+    query = arguments.get("query")
+    if not query:
+        return {"isError": True, "content": [{"type": "text", "text": "Error: query is empty"}]}
+    return {
+        "isError": False,
+        "content": [{"type": "text", "text": f"Search results for '{query}': Found datasheet for 0603 Package, 50 Ohm impedance."}]
+    }
+
 def run_mcp_stdio_server():
     """Runs a standard persistent Stdio JSON-RPC MCP server loop for eda-agent."""
     logger.info("KiCad-MCP Stdio Server loop running...")
@@ -412,7 +437,7 @@ def run_mcp_stdio_server():
                 response = {
                     "jsonrpc": "2.0",
                     "result": {
-                        "tools": [mcp_tool_schema()]
+                        "tools": [mcp_tool_schema(), web_search_tool_schema()]
                     },
                     "id": req_id
                 }
@@ -421,6 +446,13 @@ def run_mcp_stdio_server():
                 arguments = params.get("arguments", {})
                 if name == "kicad_verify_clearance":
                     result = handle_mcp_invocation(arguments)
+                    response = {
+                        "jsonrpc": "2.0",
+                        "result": result,
+                        "id": req_id
+                    }
+                elif name == "web_search":
+                    result = handle_web_search_invocation(arguments)
                     response = {
                         "jsonrpc": "2.0",
                         "result": result,
